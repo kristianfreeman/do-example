@@ -1,0 +1,13 @@
+name = "do-example"
+main = "src/index.ts"
+compatibility_date = "2022-08-09"
+compatibility_flags = ["durable_object_alarms"]
+
+[durable_objects]
+  bindings = [
+    { name = "IPBS", class_name = "IpBasedStorage" }
+  ]
+
+[[migrations]]
+tag = "v1" # Should be unique for each entry
+new_classes = ["IpBasedStorage"]
